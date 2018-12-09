@@ -1,0 +1,26 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Beat Em Up Template 3D Update 1.3.CSharp", "Beat Em Up Template 3D Update 1.3.CSharp.csproj", "{E4A6050D-45C0-BCC5-41F5-FBBFA72BF4E3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Beat Em Up Template 3D Update 1.3.CSharp.Editor", "Beat Em Up Template 3D Update 1.3.CSharp.Editor.csproj", "{816CBF9E-D9B3-A843-8089-440725DCD80D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{E4A6050D-45C0-BCC5-41F5-FBBFA72BF4E3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E4A6050D-45C0-BCC5-41F5-FBBFA72BF4E3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E4A6050D-45C0-BCC5-41F5-FBBFA72BF4E3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E4A6050D-45C0-BCC5-41F5-FBBFA72BF4E3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{816CBF9E-D9B3-A843-8089-440725DCD80D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{816CBF9E-D9B3-A843-8089-440725DCD80D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{816CBF9E-D9B3-A843-8089-440725DCD80D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{816CBF9E-D9B3-A843-8089-440725DCD80D}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
