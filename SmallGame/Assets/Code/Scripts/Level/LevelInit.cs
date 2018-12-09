@@ -16,29 +16,26 @@ public class LevelInit : MonoBehaviour {
 
 	void Awake() {
 
-        //set settings
         settings = Resources.Load("GameSettings", typeof(GameSettings)) as GameSettings;
         if(settings != null){
             Time.timeScale = settings.timeScale;
             Application.targetFrameRate = settings.framerate;
         }
 
-		//create Audio Player
+		
 		if(!GameObject.FindObjectOfType<AudioPlayer>() && createAudioPlayer)	audioplayer = GameObject.Instantiate(Resources.Load("AudioPlayer"), Vector3.zero, Quaternion.identity) as GameObject;
 
-		//create InputManager
+		
 		if(!GameObject.FindObjectOfType<InputManager>() && createInputManager) GameObject.Instantiate(Resources.Load("InputManager"), Vector3.zero, Quaternion.identity);
 
-		//create UI
+		
 		if(!GameObject.FindObjectOfType<UIManager>() && createUI) GameObject.Instantiate(Resources.Load("UI"), Vector3.zero, Quaternion.identity);
 	
-		//create Game Camera
+		
 		if(!GameObject.FindObjectOfType<CameraFollow>() && createGameCamera) GameObject.Instantiate(Resources.Load("GameCamera"), Vector3.zero, Quaternion.identity);
 
-		//start music
 		if(playMusic && createAudioPlayer) Invoke("PlayMusic", 1f);
 
-		//open a menu at level start
 		if(!string.IsNullOrEmpty(showMenuAtStart)) ShowMenuAtStart();
 	}
 

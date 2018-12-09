@@ -5,7 +5,7 @@ public class BreakableObject : MonoBehaviour, IDamagable<DamageObject> {
 
 	public string hitSFX = "";
 
-	[Header ("Gameobject Destroyed")]
+	[Header ("被损坏的物体")]
 	public GameObject destroyedGO;
 	public bool orientToImpactDir;
 
@@ -20,10 +20,10 @@ public class BreakableObject : MonoBehaviour, IDamagable<DamageObject> {
 		gameObject.layer = LayerMask.NameToLayer("DestroyableObject");
 	}
 
-	//this object was Hit
+	//用武器攻击
 	public void Hit(DamageObject DO){
 
-		//play hit sfx
+		//播放音效
 		if (hitSFX != "") {
 			GlobalAudioPlayer.PlaySFXAtPosition (hitSFX, transform.position);
 		}
@@ -33,7 +33,7 @@ public class BreakableObject : MonoBehaviour, IDamagable<DamageObject> {
 			GameObject BrokenGO = GameObject.Instantiate (destroyedGO);
 			BrokenGO.transform.position = transform.position;
 
-			//chance direction based on the impact direction
+			//武器损坏后掉落的方向
 			if (orientToImpactDir && DO.inflictor != null) {
 				float dir = Mathf.Sign(DO.inflictor.transform.position.x - transform.position.x);
 				BrokenGO.transform.rotation = Quaternion.LookRotation(Vector3.forward * dir);
@@ -51,7 +51,7 @@ public class BreakableObject : MonoBehaviour, IDamagable<DamageObject> {
 			}
 		}
 
-		//destroy 
+		//销毁
 		if (destroyOnHit) {
 			Destroy(gameObject);
 		}

@@ -25,15 +25,13 @@ public class KillBox : MonoBehaviour {
     /// <returns></returns>
     IEnumerator RestartLevel(){
 		
-		//fade to black
+		
 		UIManager UI = GameObject.FindObjectOfType<UIManager>();
 		if (UI != null) {
 			float fadeOutTime = 0.7f;
 			UI.UI_fader.Fade (UIFader.FADE.FadeOut, fadeOutTime, 0);
 			yield return new WaitForSeconds (fadeOutTime);
 		}
-
-		//load level
 		SceneManager.LoadScene (SceneManager.GetActiveScene().name);
 	}
 }
