@@ -1,6 +1,8 @@
 ﻿using UnityEngine;
 using System.Collections;
-
+/// <summary>
+/// 武器或者物体被毁坏的动画， 闪烁然后消失
+/// </summary>
 public class FlickerEffect : MonoBehaviour {
 
 	public float pauzeBeforeStart = 1.3f;
@@ -17,11 +19,11 @@ public class FlickerEffect : MonoBehaviour {
 	
 	IEnumerator FlickerCoroutine(){
 
-		//pause before start
+		
 		yield return new WaitForSeconds (pauzeBeforeStart);
 
-		//flicker
-		float t =0;
+        //闪烁
+        float t =0;
 		while(t < 1){
 			float speed = Mathf.Lerp (flickerSpeedStart, flickerSpeedEnd, MathUtilities.Coserp(0,1,t));
 			float i = Mathf.Sin(Time.time * speed);
@@ -30,10 +32,10 @@ public class FlickerEffect : MonoBehaviour {
 			yield return null;
 		}
 
-		//hide
+		
 		foreach(GameObject g in GFX) g.SetActive(false);
 
-		//destroy
+		
 		if (DestroyOnFinish) {
 			Destroy (gameObject);
 		}

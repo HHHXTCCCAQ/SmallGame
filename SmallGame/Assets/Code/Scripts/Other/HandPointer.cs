@@ -19,7 +19,7 @@ public class HandPointer : MonoBehaviour {
 
 	void Update(){
 
-		//sprite alpha
+		//更改image的alpha值
 		if (t > 0 && Time.time > startTime) {
 			sprite.enabled = true;
 			t -= Time.deltaTime * speed;
@@ -28,7 +28,7 @@ public class HandPointer : MonoBehaviour {
 			sprite.enabled = false;
 		}
 
-		//iterate
+		//重复闪烁
 		if (HandActive && t <= 0 && Time.time > startTime) {
 			t = 1;
 			if (sfx != "") GlobalAudioPlayer.PlaySFX (sfx);

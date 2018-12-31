@@ -28,7 +28,7 @@ public class BreakableObject : MonoBehaviour, IDamagable<DamageObject> {
 			GlobalAudioPlayer.PlaySFXAtPosition (hitSFX, transform.position);
 		}
 
-		//spawn destroyed gameobject version
+		//创建被破坏的游戏物体
 		if (destroyedGO != null) {
 			GameObject BrokenGO = GameObject.Instantiate (destroyedGO);
 			BrokenGO.transform.position = transform.position;

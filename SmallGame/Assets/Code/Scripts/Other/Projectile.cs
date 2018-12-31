@@ -15,21 +15,21 @@ public class Projectile : MonoBehaviour {
 		GetComponent<Rigidbody>().velocity = new Vector2((int)direction * speed, 0);
 		GetComponent<Collider>().isTrigger = true;
 
-		//turn projectile to travel direction
+		//抛射武器的方向
 		transform.rotation = Quaternion.Euler(0f, (direction == DIRECTION.Right? 180 : 0), 0f);
 
-		//show an effect when this projectile is spawned
+		//实例化特效
 		if(EffectOnSpawn) {
 			GameObject effect = GameObject.Instantiate(EffectOnSpawn) as GameObject;
 			effect.transform.position = transform.position;
 		}
 	}
 
-	//tell the player that an item is in range
+
 	void OnTriggerEnter(Collider coll) {
 		if(coll.CompareTag("Enemy")) {
 
-			//hit a damagable object
+		
 			IDamagable<DamageObject> damagableObject = coll.GetComponent(typeof(IDamagable<DamageObject>)) as IDamagable<DamageObject>;
 			if(damagableObject != null) {
 				damagableObject.Hit(damage);
@@ -38,7 +38,7 @@ public class Projectile : MonoBehaviour {
 		}
 	}
 
-	//sets the damage of this projectile
+	
 	public void SetDamage(DamageObject d){
 		damage = d;
 	}

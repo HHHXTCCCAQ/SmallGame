@@ -8,14 +8,14 @@ using UnityEngine.SceneManagement;
 public class PlayerCombat : MonoBehaviour, IDamagable<DamageObject> {
 
 	[Header ("Linked Components")]
-	public Transform weaponBone; //the bone were weapon will be parented on
-	private UnitAnimator animator; //link to the animator component
-	private UnitState playerState; //the state of the player
+	public Transform weaponBone; //骨骼
+	private UnitAnimator animator; //人物动画
+	private UnitState playerState; //人物状态
 	private Rigidbody rb;
 
 	[Header("Attack Data & Combos")]
-	public float hitZRange = 2f; //the z range of attacks
-	private int attackNum = -1; //the current attack combo number
+	public float hitZRange = 2f; //z轴的攻击范围
+	private int attackNum = -1; //攻击类型编号
 	[Space(5)]
 
 	public DamageObject[] PunchCombo; //a list of punch attacks
